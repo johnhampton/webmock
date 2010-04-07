@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{webmock}
-  s.version = "0.9.1"
+  s.version = "1.0.0.pre1"
 
-  s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
+  s.required_rubygems_version = Gem::Requirement.new("> 1.3.1") if s.respond_to? :required_rubygems_version=
   s.authors = ["Bartosz Blimke"]
-  s.date = %q{2010-02-02}
+  s.date = %q{2010-04-07}
   s.description = %q{WebMock allows stubbing HTTP requests and setting expectations on HTTP requests.}
   s.email = %q{bartosz.blimke@gmail.com}
   s.extra_rdoc_files = [
@@ -33,6 +33,7 @@ Gem::Specification.new do |s|
      "lib/webmock/errors.rb",
      "lib/webmock/http_lib_adapters/httpclient.rb",
      "lib/webmock/http_lib_adapters/net_http.rb",
+     "lib/webmock/http_lib_adapters/patron.rb",
      "lib/webmock/request.rb",
      "lib/webmock/request_execution_verifier.rb",
      "lib/webmock/request_profile.rb",
@@ -53,6 +54,8 @@ Gem::Specification.new do |s|
      "spec/net_http_spec.rb",
      "spec/net_http_spec_helper.rb",
      "spec/other_net_http_libs_spec.rb",
+     "spec/patron_spec.rb",
+     "spec/patron_spec_helper.rb",
      "spec/request_execution_verifier_spec.rb",
      "spec/request_profile_spec.rb",
      "spec/request_registry_spec.rb",
@@ -95,7 +98,7 @@ Gem::Specification.new do |s|
   s.homepage = %q{http://github.com/bblimke/webmock}
   s.rdoc_options = ["--charset=UTF-8"]
   s.require_paths = ["lib"]
-  s.rubygems_version = %q{1.3.5}
+  s.rubygems_version = %q{1.3.6}
   s.summary = %q{Library for stubbing HTTP requests in Ruby.}
   s.test_files = [
     "spec/httpclient_spec.rb",
@@ -103,6 +106,8 @@ Gem::Specification.new do |s|
      "spec/net_http_spec.rb",
      "spec/net_http_spec_helper.rb",
      "spec/other_net_http_libs_spec.rb",
+     "spec/patron_spec.rb",
+     "spec/patron_spec_helper.rb",
      "spec/request_execution_verifier_spec.rb",
      "spec/request_profile_spec.rb",
      "spec/request_registry_spec.rb",
@@ -138,15 +143,18 @@ Gem::Specification.new do |s|
       s.add_runtime_dependency(%q<addressable>, [">= 2.1.1"])
       s.add_development_dependency(%q<rspec>, [">= 1.2.9"])
       s.add_development_dependency(%q<httpclient>, [">= 2.1.5.2"])
+      s.add_development_dependency(%q<patron>, ["= 0.4.5"])
     else
       s.add_dependency(%q<addressable>, [">= 2.1.1"])
       s.add_dependency(%q<rspec>, [">= 1.2.9"])
       s.add_dependency(%q<httpclient>, [">= 2.1.5.2"])
+      s.add_dependency(%q<patron>, ["= 0.4.5"])
     end
   else
     s.add_dependency(%q<addressable>, [">= 2.1.1"])
     s.add_dependency(%q<rspec>, [">= 1.2.9"])
     s.add_dependency(%q<httpclient>, [">= 2.1.5.2"])
+    s.add_dependency(%q<patron>, ["= 0.4.5"])
   end
 end
 
